@@ -9,8 +9,8 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-1">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h2 class="h2 fw-bold">Go ahead. Add to cart. You know you want to.</h2>
-        <p class="lead text-muted">Remember, it is always a good idea to buy a birthday cake even when it's not your birthday. Why enjoy it once a year?</p>
+        <h2 class="h2 fw-bold">Oh Sweet Child of mine...</h2>
+        <p class="lead text-muted">We got the good stuff.</p>
    <!--
         <p>
           <a href="#" class="btn btn-primary my-2">Make an account</a>
@@ -22,7 +22,7 @@
   <div class="album py-5 bg-light">
     <div class="container">
 
-      <div class="pb-3 h5">All the Goodies</div>
+      <div class="pb-3 h5">All The Goodies</div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
 
         {% for product in products %}
@@ -36,7 +36,7 @@
                 <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
               </p>
               <div class="d-flex justify-content-between align-items-center">
-
+              <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">${{ product.price }}</a>
               </div>
             </div>
           </div>
