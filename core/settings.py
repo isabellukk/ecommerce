@@ -9,6 +9,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = "^u)l@a$tjr9stjcw#fd+^+6&@6665pn^&k#)akv8w##dbf0k48"
 
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1']
@@ -24,6 +26,7 @@ INSTALLED_APPS = [
     'store',
     'cart',
     'account',
+    'payment',
 ]
 
 MIDDLEWARE = [
