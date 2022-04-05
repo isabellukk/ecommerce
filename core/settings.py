@@ -2,11 +2,7 @@ import os
 from pathlib import Path
 import environ
 
-env = environ.Env(
-    STRIPE_PUBLISHABLE_KEY=str,
-    STRIPE_SECRET_KEY=str,
-
-)
+env = environ.Env()
 environ.Env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
