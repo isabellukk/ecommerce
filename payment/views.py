@@ -1,6 +1,8 @@
 import json
+import os
 import environ
 import stripe
+from pathlib import Path
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -9,18 +11,9 @@ from django.views.generic.base import TemplateView
 
 from cart.cart import Cart
 
+
 env = environ.Env()
 environ.Env.read_env()
-
-
-def order_placed(request):
-    basket = Basket(request)
-    basket.clear()
-    return render(request, 'payment/orderplaced.html')
-
-
-class Error(TemplateView):
-    template_name = 'payment/error.html'
 
 
 @login_required
@@ -34,7 +27,7 @@ def CartView(request):
     stripe.api_key = env('STRIPE_SECRET_KEY')
     intent = stripe.PaymentIntent.create(
         amount=total,
-        currency='gbp',
+        currency='usd',
         metadata={'userid': request.user.id}
     )
 
