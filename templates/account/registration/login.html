@@ -33,7 +33,7 @@
 
                                 {% if form.errors %}
                                 <div class="alert alert-primary" role="alert">
-                                    Either the Username or Password is incorrect! Could be both.
+                                    Error: Username or Password not correct!
                                 </div>
                                 {% endif %}
 
@@ -48,11 +48,11 @@
                                     </button>
                                 </div>
                                 <p class="text-center pb-3">
-                                    <a href="{% url "account:register" %}">Create an account</a>
+                                    <a href="{% url "account:register" %}">Create An Account</a>
                                 </p>
                             </form>
-                            <p class="small text-center pt-4">
-                                {% comment %} <a href="{% url "password_reset" %}">Forgotten Password?</a> {% endcomment %}
+                            <p class="text-center pb-3">
+                                <a href="{% url "account:pwdreset" %}">Reset Password</a>
                             </p>
                             <p class="small text-center">
                                 {% comment %} <a href="{% url "accounts:register" %}">Help Center?</a> {% endcomment %}
