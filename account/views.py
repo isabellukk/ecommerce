@@ -8,7 +8,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 # from orders.views import user_orders
-
+from store.views import product_all
 from .forms import RegistrationForm, UserEditForm
 from .models import UserBase
 from .tokens import account_activation_token
@@ -16,6 +16,11 @@ from .tokens import account_activation_token
 
 @login_required
 def dashboard(request):
+    return redirect('store:product_all')
+
+
+@login_required
+def account_details(request):
     return render(request,
                   'account/user/dashboard.html')
 
