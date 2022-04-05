@@ -20,6 +20,8 @@
   }
 </style>
 
+<body>
+
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="col-md-12">
@@ -93,7 +95,7 @@
                   <!-- Payment elements will appear here -->
                 </div>
                 <hr class="my-4">
-                <!-- <button id="submit" class="btn btn-primary w-100 fw-bold" data-secret="{{ client_secret }}">Pay</button> -->
+                <button id="submit" class="btn btn-primary w-100 fw-bold" data-secret="{{ client_secret }}">Pay</button>
               </form>
             </div>
           </div>
@@ -102,13 +104,13 @@
     </div>
   </div>
 </div>
-
+</body>
 
 <script>
     {% comment %} Make csrf token availble in JS files {% endcomment %}
     var CSRF_TOKEN = '{{ csrf_token }}';
 </script>
 <script src="https://js.stripe.com/v3/"></script>
-<script src="{% static 'payment/index.js' %}" data-rel-js></script>
+<script src="{% static 'payment/index.js' %}" data-rel-js defer></script>
 
 {% endblock %}

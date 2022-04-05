@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 import environ
+import stripe
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -103,6 +105,12 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CART_SESSION_ID = 'cart'
+
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+endpoint_secret = 'whsec_96564378ca14f5c8d86c27e39701f6bf659c39e881f66cba30d604a47a95d1fe'
 
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'

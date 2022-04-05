@@ -2,7 +2,17 @@
 {% load static %}
 {% block title %}Shopping Cart{% endblock %}
 {% block content %}
+<style>
+  .btn-link {
+      border: 2px solid #ccc;
+      height: calc(2em + .75rem + 2px);
+  }
 
+  .btn-submit {
+      border-color: #1497ff;
+      box-shadow: none;
+  }
+</style>
 <main class="pt-5">
   <div class="container">
     <h1 class="h5">Shopping Cart</h1>
@@ -55,6 +65,17 @@
     {% endfor %}
     <div class="col-12 text-end">
       <div class="h6 fw-bold">Total: $<div id="subtotal" class="d-inline-flex">{{cart.get_total_price}}</div></div>
+    </div>
+    <div class="col-12 text-end">
+
+      <p class="">
+        {% csrf_token %}
+        <button class="btn btn-link btn-submit py-2 mb-4 mt-5 fw-bold">
+          <a href="{% url "payment:cart" %}">Checkout</a> </button>
+      </p>
+
+
+      <div class="h6 fw-bold"><div id="subtotal" class="d-inline-flex"></div></div>
     </div>
   </div>
 </main>
