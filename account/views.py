@@ -53,6 +53,8 @@ def account_register(request):
         if registerForm.is_valid():
             user = registerForm.save(commit=False)
             user.email = registerForm.cleaned_data['email']
+            user.first_name = registerForm.cleaned_data['first_name']
+            user.last_name = registerForm.cleaned_data['last_name']
             user.set_password(registerForm.cleaned_data['password'])
             user.is_active = False
             user.save()
@@ -65,7 +67,7 @@ def account_register(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject=subject, message=message)
-            return HttpResponse('registered succesfully and activation sent')
+            return render(request, 'account/registration/registration_email.html')
     else:
         registerForm = RegistrationForm()
     return render(request, 'account/registration/register.html', {'form': registerForm})
