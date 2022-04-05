@@ -8,7 +8,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 # from orders.views import user_orders
-
+from store.views import product_all
 from .forms import RegistrationForm, UserEditForm
 from .models import UserBase
 from .tokens import account_activation_token
@@ -16,6 +16,11 @@ from .tokens import account_activation_token
 
 @login_required
 def dashboard(request):
+    return redirect('store:product_all')
+
+
+@login_required
+def account_details(request):
     return render(request,
                   'account/user/dashboard.html')
 
@@ -46,7 +51,7 @@ def delete_user(request):
 def account_register(request):
 
     if request.user.is_authenticated:
-        return redirect('account:dashboard')
+        return redirect('store:product_all')
 
     if request.method == 'POST':
         registerForm = RegistrationForm(request.POST)
@@ -83,6 +88,6 @@ def account_activate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
-        return redirect('account:dashboard')
+        return redirect('store:product_all')
     else:
         return render(request, 'account/registration/activation_invalid.html')

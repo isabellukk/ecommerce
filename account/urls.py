@@ -15,9 +15,12 @@ urlpatterns = [
     path('register/', views.account_register, name='register'),
     path('activate/<slug:uidb64>/<slug:token>)/',
          views.account_activate, name='activate'),
+
     path('account/register/', TemplateView.as_view(
         template_name="account/registration/registration_email.html"), name='registration_email'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('account_details/', views.account_details, name='account_details'),
+
     path('profile/edit/', views.edit_details, name='edit_details'),
     path('profile/delete_user/', views.delete_user, name='delete_user'),
     path('profile/delete_confirm/', TemplateView.as_view(
