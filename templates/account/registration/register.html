@@ -36,15 +36,20 @@
                                 {% endif %}
                                 {% endfor %}
                                 {% endif %}
-                                <label>{{ form.first_name.label }}<span class="text-muted small">
-                                        (Required)</span></label>
-                                {{ form.first_name }}
-                                <label>{{ form.last_name.label }}<span class="text-muted small">
-                                        (Required)</span></label>
-                                {{ form.last_name }}
+
+
                                 <label>{{ form.user_name.label }}<span class="text-muted small">
                                         (Required)</span></label>
                                 {{ form.user_name }}
+
+                                <label>{{ form.first_name.label }}<span class="text-muted small">
+                                        (Required)</span></label>
+                                {{ form.first_name }}
+
+                                <label>{{ form.last_name.label }}<span class="text-muted small">
+                                        (Required)</span></label>
+                                {{ form.last_name }}
+
                                 <label>{{ form.email.label}}<span class="text-muted small">
                                         (Required)</span></label>
                                 {{ form.email }}
@@ -59,7 +64,7 @@
                                 {{ form.password2 }}
                                 <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Register</button>
                                 <p class="text-center">
-                                  
+
                                 </p>
                             </form>
                         </div>
