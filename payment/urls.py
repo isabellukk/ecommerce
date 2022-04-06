@@ -1,5 +1,4 @@
 from django.urls import path
-import stripe
 
 from . import views
 

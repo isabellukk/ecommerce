@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 import environ
 import os
 import json
-import stripe
 
 
 env = environ.Env()
@@ -33,12 +32,12 @@ def CartView(request):
     total = total.replace('.', '')
     total = int(total)
 
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    intent = stripe.PaymentIntent.create(
-        amount=total,
-        currency='gbp',
-        metadata={'userid': request.user.id}
-    )
+    # stripe.api_key = settings.STRIPE_SECRET_KEY
+    # intent = stripe.PaymentIntent.create(
+    #     amount=total,
+    #     currency='gbp',
+    #     metadata={'userid': request.user.id}
+    # )
 
     return render(request, 'payment/home.html', {'client_secret': intent.client_secret, 'STRIPE_PUBLISHABLE_KEY': os.environ.get('STRIPE_PUBLISHABLE_KEY')})
 
