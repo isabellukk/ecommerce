@@ -1,14 +1,13 @@
 import os
 from pathlib import Path
 import environ
-import stripe
 
 
 env = environ.Env()
 environ.Env.read_env()
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = "^u)l@a$tjr9stjcw#fd+^+6&@6665pn^&k#)akv8w##dbf0k48"
 
