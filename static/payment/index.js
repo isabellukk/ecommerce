@@ -1,27 +1,26 @@
-//'use strict';
+import js2py
 
+let stripe = Stripe('sk_test_51KlBXWEEWL27baH6F0MBTK0ZREUfbhYmxhDh2hqF1EiOPyFEyzSoA4eWEdsZjYRSOzvFiCgc61VvCKvM8RaZZDRL003jtFtJmN');
 
-var stripe = Stripe('sk_test_51KlBXWEEWL27baH6F0MBTK0ZREUfbhYmxhDh2hqF1EiOPyFEyzSoA4eWEdsZjYRSOzvFiCgc61VvCKvM8RaZZDRL003jtFtJmN');
-
-var elem = document.getElementById('submit');
+let elem = document.getElementById('submit');
 clientsecret = elem.getAttribute('data-secret');
 
 // Set up Stripe.js and Elements to use in checkout form
-var elements = stripe.elements();
-var style = {
+let elements = stripe.elements();
+let style = {
 base: {
   color: "#000",
-  lineHeight: '2.4',
+  lineHeight: '12.4',
   fontSize: '16px'
 }
 };
 
 
-var card = elements.create("card", { style: style });
+let card = elements.create("card", { style: style });
 card.mount("#card-element");
 
 card.on('change', function(event) {
-var displayError = document.getElementById('card-errors')
+let displayError = document.getElementById('card-errors')
 if (event.error) {
   displayError.textContent = event.error.message;
   $('#card-errors').addClass('alert alert-info');
@@ -31,15 +30,15 @@ if (event.error) {
 }
 });
 
-var form = document.getElementById('payment-form');
+let form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
 ev.preventDefault();
 
-var custName = document.getElementById("custName").value;
-var custAdd = document.getElementById("custAdd").value;
-var custAdd2 = document.getElementById("custAdd2").value;
-var postCode = document.getElementById("postCode").value;
+let custName = document.getElementById("custName").value;
+let custAdd = document.getElementById("custAdd").value;
+let custAdd2 = document.getElementById("custAdd2").value;
+let postCode = document.getElementById("postCode").value;
 
 
   $.ajax({

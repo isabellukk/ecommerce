@@ -84,20 +84,6 @@ class PwdResetForm(PasswordResetForm):
         return email
 
 
-class PwdResetForm(PasswordResetForm):
-
-    email = forms.EmailField(max_length=254, widget=forms.TextInput(
-        attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'}))
-
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        u = UserBase.objects.filter(email=email)
-        if not u:
-            raise forms.ValidationError(
-                'Unfortunatley we can not find that email address')
-        return email
-
-
 class PwdResetConfirmForm(SetPasswordForm):
     new_password1 = forms.CharField(
         label='New Password', widget=forms.PasswordInput(
