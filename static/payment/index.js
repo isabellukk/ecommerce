@@ -1,8 +1,9 @@
 
-var stripe = Stripe('setting.STRIPE_PUBLISHABLE_KEY');
+var stripe = Stripe('pk_test_51KlBXWEEWL27baH6OUOpR9LRKUYwAdSlPGRWDNIeFOPPnRcByKloO3gF9tZ5sgimABGo2Lej4qHFJXtG3YTwdVdE00Vqbft6im');
+
 
 var elem = document.getElementById('submit');
-clientsecret = elem.getAttribute('data-secret');
+client_secret = elem.getAttribute('data-secret');
 
 // Set up Stripe.js and Elements to use in checkout form
 var elements = stripe.elements();
@@ -44,14 +45,14 @@ var postCode = document.getElementById("postCode").value;
     type: "POST",
     url: 'http://127.0.0.1:8000/orders/add/',
     data: {
-      order_key: clientsecret,
+      order_key: client_secret,
       csrfmiddlewaretoken: CSRF_TOKEN,
       action: "post",
     },
     success: function (json) {
       console.log(json.success)
 
-      stripe.confirmCardPayment(clientsecret, {
+      stripe.confirmCardPayment(client_secret, {
         payment_method: {
           card: card,
           billing_details: {
