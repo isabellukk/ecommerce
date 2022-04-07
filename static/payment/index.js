@@ -1,6 +1,6 @@
 import js2py
 
-let stripe = Stripe('sk_test_51KlBXWEEWL27baH6F0MBTK0ZREUfbhYmxhDh2hqF1EiOPyFEyzSoA4eWEdsZjYRSOzvFiCgc61VvCKvM8RaZZDRL003jtFtJmN');
+let stripe = stripe('sk_test_51KlBXWEEWL27baH6F0MBTK0ZREUfbhYmxhDh2hqF1EiOPyFEyzSoA4eWEdsZjYRSOzvFiCgc61VvCKvM8RaZZDRL003jtFtJmN');
 
 let elem = document.getElementById('submit');
 clientsecret = elem.getAttribute('data-secret');
