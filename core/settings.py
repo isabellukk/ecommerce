@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import environ
+import stripe
 
 
 env = environ.Env()
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     'cart',
     'account',
     'payment',
+    'stripe',
 ]
 
 MIDDLEWARE = [
