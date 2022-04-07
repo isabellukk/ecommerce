@@ -8,10 +8,21 @@
     {
     border: 2px solid #ccc;
     height: calc(2em + .75rem + 2px);
+    font-family: serif;
+
   }
 
   .form-control {
     border: 2px solid #ccc;
+    font-family: serif;
+
+  }
+
+  .form-select {
+    font-family: serif;
+    color: gray;
+
+
   }
 
   .account-form input:focus {
@@ -33,23 +44,23 @@
               <div id="card-errors" class="a" role="alert"></div>
               <form>
                 <div class="row g-3">
-                  <div class="col-sm-7">
-                    <label for="firstName" class="form-label">Customer Name</label>
-                    <input type="text" class="form-control" id="custName" placeholder="" required>
+                  <div class="col-12">
+                    <label for="firstName" class="form-label" >Full Name</label>
+                    <input type="text" class="form-control" id="custName" placeholder="Chuck Norris" required>
                     <div class="invalid-feedback">
                       Valid first name is required.
                     </div>
                   </div>
                   <div class="col-12">
                     <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="Chucknorris@gmail.com">
+                    <input type="email" class="form-control" id="email" placeholder="ChuckNorris@gmail.com">
                     <div class="invalid-feedback">
                       Please enter a valid email address for shipping updates.
                     </div>
                   </div>
                   <div class="col-12">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="custAdd" placeholder="1234 Main St" required>
+                    <input type="text" class="form-control" id="custAdd" placeholder="2468 Chuck Way Dr." required>
                     <div class="invalid-feedback">
                       Please enter your shipping address.
                     </div>
@@ -57,7 +68,7 @@
                   <div class="col-12">
                     <label for="address2" class="form-label">Address 2 <span
                         class="text-muted">(Optional)</span></label>
-                    <input type="text" class="form-control" id="custAdd2" placeholder="Apartment or suite">
+                    <input type="text" class="form-control" id="custAdd2" placeholder="Apt/Suite #">
                   </div>
                   <div class="col-md-5">
                     <label for="country" class="form-label">Country</label>
