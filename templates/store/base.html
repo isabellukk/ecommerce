@@ -29,12 +29,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-none d-md-block fw500" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Goodies
-                                <i class="ps-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                    </svg></i>
+                                
                             </a>
                             <ul class="dropdown-menu rounded-0 border-0" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{% url "store:product_all" %}">All</a></li>
@@ -146,51 +141,60 @@
     <div id="content">{% block content %} {% endblock %}</div>
 
     <footer class="container py-5 footer">
-        <hr>
-        <div class="row pt-4">
-            <div class="col-12 col-md">
-                <img src="https://cdn-icons-png.flaticon.com/512/5153/5153647.png" width="60px" height="60px"></img>
-            </div>
-            <div class="col-6 col-md fs15">
-                <h5>Features</h5>
-                <ul class="list-unstyled">
-                    <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md fs15">
-                <h5>Resources</h5>
-                <ul class="list-unstyled">
-                    <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md fs15">
-                <h5>Resources</h5>
-                <ul class="list-unstyled">
-                    <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled">
-                    <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+  <hr>
+  <div class="row pt-4">
+    <div class="col-12 col-md">
+      <div class="row pt-4">
+
+          <div class="col-6 col-md fs15">
+              <img src="https://cdn-icons-png.flaticon.com/512/5153/5153647.png" width="60px" height="60px"></img>
+    </div>
+    <div class="col-6 col-md fs15">
+              <h5>Help</h5>
+              <ul class="list-unstyled">
+                  <li><a class="link-secondary text-decoration-none" href="#">Order Status</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Returns + Exchangess</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Shipping</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">FAQ</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Contact Us</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">See All Help Topics</a></li>
+              </ul>
+          </div>
+
+
+    <div class="col-6 col-md fs15">
+              <h5>Support</h5>
+              <ul class="list-unstyled">
+                  <li><a class="link-secondary text-decoration-none" href="#">Homelessness</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">LGBTQ teens</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Animal Shelter</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Digital Equity</a></li>
+              </ul>
+          </div>
+
+
+    <div class="col-6 col-md fs15">
+              <h5>Random Facts</h5>
+              <ul class="list-unstyled">
+                  <li><a class="link-secondary text-decoration-none" href="#">Mystery #1</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Mystery #2</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Mystery #3</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Mystery #4</a></li>
+              </ul>
+          </div>
+
+
+    <div class="col-6 col-md fs15">
+              <h5>About Us</h5>
+              <ul class="list-unstyled">
+                  <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Careers</a></li>
+                  <li><a class="link-secondary text-decoration-none" href="#">Our Environment</a></li>
+              </ul>
+          </div>
+  </div>
+</footer>
 </body>
 
 </html>

@@ -31,21 +31,27 @@
           <div class="col border-bottom">
             <div class="row p-3">
               <div class="col-6"></div>
-              <div class="col-6 text-end"><span class="h6 fw-bold">${{ product.price }}</span></div>
+              <div class="col-6 text-end">
+                <span id="subtotall" class="h6 fw-bold">{{ item.qty }}</span>
+                <span class="h6 fw-bold"> x </span>
+                <span class="h6 fw-bold">${{ product.price }}</span>
+              </div>
             </div>
           </div>
           <div class="col">
             <div class="row p-2">
               <div class="col-12 mr-4">
                 <label for="select">Qty</label>
-                <select id="select{{product.id}}">
-                  <option selected>
-                    {{item.qty}}
-                  </option>
+                <select id="select{{product.id}}" style="width:50px;height:31px;">
+                  <option value="" selected disabled hidden>{{item.qty}}</option>
                   <option value="">1</option>
                   <option value="">2</option>
                   <option value="">3</option>
                   <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
                 </select>
                 <button type="button" id="update-button" data-index="{{product.id}}"
                   class="btn btn-outline-secondary btn-sm update-button gap-0">
@@ -63,18 +69,17 @@
     </div>
     {% endwith %}
     {% endfor %}
+
+
     <div class="col-12 text-end">
       <div class="h6 fw-bold">Total: $<div id="subtotal" class="d-inline-flex">{{cart.get_total_price}}</div></div>
     </div>
     <div class="col-12 text-end">
-
       <p class="">
         {% csrf_token %}
         <button class="btn btn-link btn-submit py-2 mb-4 mt-5 fw-bold">
           <a href="{% url "payment:cart" %}">Checkout</a> </button>
       </p>
-
-
       <div class="h6 fw-bold"><div id="subtotal" class="d-inline-flex"></div></div>
     </div>
   </div>
@@ -96,11 +101,17 @@
       success: function (json) {
         $('.product-item[data-index="' + prodid + '"]').remove();
         document.getElementById("subtotal").innerHTML = json.subtotal;
-        document.getElementById("cart-qty").innerHTML = json.qty
+        document.getElementById("subtotall").innerHTML = json.subtotall;
+
+        document.getElementById("cart-qty").innerHTML = json.qty;
       },
       error: function (xhr, errmsg, err) {}
     });
   })
+
+
+  //Hide double selection
+
 
   // Update Item
   $(document).on('click', '.update-button', function (e) {
@@ -118,6 +129,8 @@
       success: function (json) {
         document.getElementById("cart-qty").innerHTML = json.qty
         document.getElementById("subtotal").innerHTML = json.subtotal
+
+
       },
       error: function (xhr, errmsg, err) {}
     });

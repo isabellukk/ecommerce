@@ -6,7 +6,8 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = "^u)l@a$tjr9stjcw#fd+^+6&@6665pn^&k#)akv8w##dbf0k48"
 
@@ -30,6 +31,8 @@ INSTALLED_APPS = [
     'cart',
     'account',
     'payment',
+    'stripe',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -98,9 +101,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
