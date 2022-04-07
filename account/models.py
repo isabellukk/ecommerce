@@ -9,7 +9,6 @@ from django_countries.fields import CountryField
 class CustomAccountManager(BaseUserManager):
 
     def create_superuser(self, email, user_name, password, first_name, last_name, ** other_fields):
-
         other_fields.setdefault('is_staff', True)
         other_fields.setdefault('is_superuser', True)
         other_fields.setdefault('is_active', True)
@@ -36,7 +35,7 @@ class CustomAccountManager(BaseUserManager):
         return user
 
 
-class UserBase(AbstractBaseUser, PermissionsMixin):
+class UserBase(AbstractBaseUser, PermissionsMixin, str):
     email = models.EmailField(_('email address'), unique=True)
     user_name = models.CharField(max_length=150, unique=True)
     first_name = models.CharField(max_length=50, blank=True)
