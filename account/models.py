@@ -33,7 +33,7 @@ class CustomAccountManager(BaseUserManager):
                           first_name=first_name, last_name=last_name, **other_fields)
         user.set_password(password)
         user.save()
-        return
+        return user
 
 
 class UserBase(AbstractBaseUser, PermissionsMixin):
@@ -44,7 +44,7 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
     about = models.TextField(_(
         'about'), max_length=500, blank=True)
     # Delivery details
-    country = CountryField(default='US')
+    country = CountryField()
     phone_number = models.CharField(max_length=10, blank=True)
     postcode = models.CharField(max_length=12, blank=True)
     address_line_1 = models.CharField(max_length=150, blank=True)
