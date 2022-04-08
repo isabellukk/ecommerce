@@ -1,15 +1,12 @@
 import os
 from pathlib import Path
-import environ
 import config
 
-env = environ.Env()
-environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '^u)l@a$tjr9stjcw#fd+^+6&@6665pn^&k#)akv8w##dbf0k48'
+SECRET_KEY = config.SECRET_KEY
 
 STRIPE_PUBLISHABLE_KEY = config.STRIPE_PUBLISHABLE_KEY
 
@@ -110,10 +107,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
-
-STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_ENDPOINT_KEY = env('STRIPE_ENDPOINT_KEY')
 
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
