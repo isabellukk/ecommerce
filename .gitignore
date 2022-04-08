@@ -8,3 +8,6 @@ setup.cfg
 stripe_1.5.9_mac-os_x86_64.tar.gz
 stripe.exe
 stripe.txt
+venv
+venvScriptsactivate
+.coverage
