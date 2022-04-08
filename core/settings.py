@@ -1,19 +1,29 @@
 import os
 from pathlib import Path
-import config
+from decouple import config
+import locale
 
+
+config.encoding = locale.getpreferredencoding(False)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#
+# SECRET_KEY = config.SECRET_KEY
+#
+# STRIPE_PUBLISHABLE_KEY = config.STRIPE_PUBLISHABLE_KEY
+#
+# STRIPE_SECRET_KEY = config.STRIPE_SECRET_KEY
+#
+# STRIPE_ENDPOINT_KEY = config.STRIPE_ENDPOINT_KEY
 
-SECRET_KEY = config.SECRET_KEY
+SECRET_KEY = config('SECRET_KEY')
 
-STRIPE_PUBLISHABLE_KEY = config.STRIPE_PUBLISHABLE_KEY
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 
-STRIPE_SECRET_KEY = config.STRIPE_SECRET_KEY
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
-STRIPE_ENDPOINT_KEY = config.STRIPE_ENDPOINT_KEY
-
+STRIPE_ENDPOINT_KEY = config('STRIPE_ENDPOINT_KEY')
 
 DEBUG = True
 
