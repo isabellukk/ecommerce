@@ -1,3 +1,10 @@
 .venv
 .env
 config.py
+mypy_django.ini
+mypy.ini
+package-lock.json 05-23-52-150.json
+setup.cfg
+stripe_1.5.9_mac-os_x86_64.tar.gz
+stripe.exe
+stripe.txt
