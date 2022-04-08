@@ -40,7 +40,7 @@
 
                             </div>
                             <div class="col-6 text-end">
-<button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">Add to cart</button></div>
+<div id="success"><button onclick=success() type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">Add to cart</button></div></div>
                         </div>
                     </div>
                 </div>
@@ -68,6 +68,12 @@
             error: function (xhr, errmsg, err) {}
         });
     })
+</script>
+
+<script>
+  function success() {
+    alert("YAYYYY added to cart!");
+  }
 </script>
 
 {% endblock %}

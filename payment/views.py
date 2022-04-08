@@ -1,8 +1,7 @@
 import json
-import stripe
-import environ
-from django.conf import settings
 
+import stripe
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -11,10 +10,6 @@ from django.views.generic.base import TemplateView
 
 from cart.cart import Cart
 from orders.views import payment_confirmation
-
-
-env = environ.Env()
-environ.Env.read_env()
 
 
 def order_placed(request):
@@ -35,7 +30,7 @@ def CartView(request):
     total = total.replace('.', '')
     total = int(total)
 
-    stripe.api_key = env('STRIPE_SECRET_KEY')
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='usd',
