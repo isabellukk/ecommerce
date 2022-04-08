@@ -1,6 +1,7 @@
 .cart-qty{
     color: #fff;
     background: #d42114;
+    transform: scale(1);
     border: 2px solid #fff;
     border-radius: 50%;
     text-align: center;
@@ -18,12 +19,18 @@
     right: 10px;
 }
 
+
 .cart-btn{
     position: relative;
+
 }
 
 .cart-btn:hover, .cart-btn:focus, .cart-btn:active, .cart-btn.active{
     color:#d42114;
-    transition-duration: 0.4s;
+    transition-duration: 1.4s;
     background-color: #fff;
+}
+
+.bounce {
+  transform: scale(10);
 }

@@ -6,11 +6,11 @@
 .navbar img{
   max-width: 60%;
 }
+
 /* Bootstrap Over-ride */
-@media (min-width: 1000px){
-    .container{
-        max-width: 1000px;
-    }
+@media (min-width: 380px){
+
+
 }
 @media (max-width: 1200px){
     .container{
