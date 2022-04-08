@@ -13,8 +13,10 @@ SECRET_KEY = '^u)l@a$tjr9stjcw#fd+^+6&@6665pn^&k#)akv8w##dbf0k48'
 
 STRIPE_PUBLISHABLE_KEY = config.STRIPE_PUBLISHABLE_KEY
 
-
 STRIPE_SECRET_KEY = config.STRIPE_SECRET_KEY
+
+STRIPE_ENDPOINT_KEY = config.STRIPE_ENDPOINT_KEY
+
 
 DEBUG = True
 
@@ -111,10 +113,10 @@ CART_SESSION_ID = 'cart'
 
 STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+STRIPE_ENDPOINT_KEY = env('STRIPE_ENDPOINT_KEY')
 
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

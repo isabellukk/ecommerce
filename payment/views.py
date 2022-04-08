@@ -30,7 +30,7 @@ def CartView(request):
     total = total.replace('.', '')
     total = int(total)
 
-    stripe.api_key = 'sk_test_51KlBXWEEWL27baH6F0MBTK0ZREUfbhYmxhDh2hqF1EiOPyFEyzSoA4eWEdsZjYRSOzvFiCgc61VvCKvM8RaZZDRL003jtFtJmN'
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='usd',
