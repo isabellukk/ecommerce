@@ -16,11 +16,11 @@ from .tokens import account_activation_token
 
 @login_required
 def dashboard(request):
-    # orders = user_orders(request)
-    # return render(request,
-    #               'account/user/dashboard.html',
-    #               {'section': 'profile', 'orders': orders})
-    return redirect('store:product_all')
+    orders = user_orders(request)
+    return render(request,
+                  'account/user/dashboard.html',
+                  {'section': 'profile', 'orders': orders})
+    # return redirect('store:product_all')
 
 
 @login_required
@@ -92,6 +92,6 @@ def account_activate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
-        return redirect('store:product_all')
+        return redirect('account:dashboard')
     else:
         return render(request, 'account/registration/activation_invalid.html')

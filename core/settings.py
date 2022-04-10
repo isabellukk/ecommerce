@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+
 import config
 
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'rest_framework',
         'django_countries',
         'store',
         'cart',
