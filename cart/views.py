@@ -1,8 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from store.models import Product
-from django.urls import Resolver404, resolve, reverse
-
 
 from .cart import Cart
 

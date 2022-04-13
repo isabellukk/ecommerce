@@ -1,7 +1,6 @@
-{% extends "store/base.html" %}
-{% load static %}
+{% extends "../base.html" %}
 {% block title %}
-{{ product.name }}
+{% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 {% block content %}
 

@@ -1,4 +1,4 @@
-var stripe = Stripe('pk_test_51KlBXWEEWL27baH6OUOpR9LRKUYwAdSlPGRWDNIeFOPPnRcByKloO3gF9tZ5sgimABGo2Lej4qHFJXtG3YTwdVdE00Vqbft6im');
+var stripe = Stripe('pk_test_51KlBXWEEWL27baH6cpB4T4LYdHogJQOQ9Jr5rInSYmgxGbR8H86BL8HaplQJJQ4ipMceHV1Vox0BZ74ULZRy6BFR00mzi0au2X');
 
 
 var elem = document.getElementById('submit');

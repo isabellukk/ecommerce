@@ -1,6 +1,8 @@
 import json
+import os
+
 import stripe
-from django.conf import settings
+import config
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -29,14 +31,15 @@ def CartView(request):
     total = total.replace('.', '')
     total = int(total)
 
-    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe.api_key = config.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='usd',
         metadata={'userid': request.user.id}
     )
 
-    return render(request, 'payment/home.html', {'client_secret': intent.client_secret})
+    return render(request, 'payment/payment_form.html', {'client_secret': intent.client_secret,
+                                                         'STRIPE_PUBLISHABLE_KEY': config.STRIPE_PUBLISHABLE_KEY})
 
 
 @csrf_exempt

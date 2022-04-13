@@ -1,7 +1,8 @@
-{% extends "../store/base.html" %}
+{% extends "./sub_base.html" %}
 {% load static %}
-{% block title %}Payment{% endblock %}
-{% block content %}
+{% block title %}Make Payment{% endblock %}
+
+{% block sub_content %}
 
 <style>
   .account-form input,
@@ -9,6 +10,7 @@
     border: 2px solid #ccc;
     height: calc(2em + .75rem + 2px);
     font-family: serif;
+    width: 100%;
 
   }
 
@@ -38,7 +40,7 @@
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
-            <div id="payment-form" class="col-12 col-lg-6 mx-auto">
+            <div id="payment-form" class="col-12 col-lg-12 mx-auto">
               <h3 class="mb-3">Billing address</h3>
               <!-- Error messages in this element -->
               <div id="card-errors" class="a" role="alert"></div>
@@ -70,7 +72,7 @@
                         class="text-muted">(Optional)</span></label>
                     <input type="text" class="form-control" id="custAdd2" placeholder="Apt/Suite #">
                   </div>
-                  <div class="col-md-5">
+                  <div class="col-md-4">
                     <label for="country" class="form-label">Country</label>
                     <select name="Country" class="form-select" id="country" required>
 
@@ -380,7 +382,7 @@
                       Please provide a valid state.
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <label for="Postcode" class="form-label">Zip code</label>
                     <input type="text" class="form-control" id="postCode" placeholder="" required>
                     <div class="invalid-feedback">
